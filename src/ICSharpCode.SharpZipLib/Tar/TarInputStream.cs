@@ -1,3 +1,4 @@
+using ICSharpCode.SharpZipLib.Core;
 using System;
 using System.IO;
 using System.Text;
@@ -10,7 +11,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 	/// the archive, and the read each entry as a normal input stream
 	/// using read().
 	/// </summary>
-	public class TarInputStream : Stream
+	public class TarInputStream : Stream, IInputStreamEntries
 	{
 		#region Constructors
 
@@ -593,6 +594,16 @@ namespace ICSharpCode.SharpZipLib.Tar
 				}
 			}
 			return currentEntry;
+		}
+
+		IArchiveEntry IInputStreamEntries.GetNextEntry()
+		{
+			return GetNextEntry();
+		}
+
+		public Stream GetStream()
+		{
+			return this;
 		}
 
 		/// <summary>

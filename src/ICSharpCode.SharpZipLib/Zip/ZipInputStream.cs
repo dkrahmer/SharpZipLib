@@ -1,4 +1,5 @@
 using ICSharpCode.SharpZipLib.Checksum;
+using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Encryption;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
@@ -55,7 +56,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 	/// }
 	/// </code>
 	/// </example>
-	public class ZipInputStream : InflaterInputStream
+	public class ZipInputStream : InflaterInputStream, IInputStreamEntries
 	{
 		#region Instance Fields
 
@@ -297,6 +298,16 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 
 			return entry;
+		}
+
+		IArchiveEntry IInputStreamEntries.GetNextEntry()
+		{
+			return GetNextEntry();
+		}
+
+		public Stream GetStream()
+		{
+			return this;
 		}
 
 		/// <summary>

@@ -1,3 +1,4 @@
+using ICSharpCode.SharpZipLib.Core;
 using System;
 using System.IO;
 
@@ -123,7 +124,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 	/// <br/>
 	/// <br/>Author of the original java version : Jochen Hoenicke
 	/// </summary>
-	public class ZipEntry
+	public class ZipEntry : IArchiveEntry
 	{
 		[Flags]
 		private enum Known : byte

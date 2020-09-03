@@ -1,3 +1,4 @@
+using ICSharpCode.SharpZipLib.Core;
 using System;
 using System.IO;
 using System.Text;
@@ -31,7 +32,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 	/// defaults and the File is set to null.</p>
 	/// <see cref="TarHeader"/>
 	/// </summary>
-	public class TarEntry
+	public class TarEntry : IArchiveEntry
 	{
 		#region Constructors
 
