@@ -14,7 +14,7 @@ namespace ICSharpCode.SharpZipLib.Encryption
 		/// <summary>
 		/// Generates new encryption keys based on given seed
 		/// </summary>
-		/// <param name="seed">The seed value to initialise keys with.</param>
+		/// <param name="seed">The seed value to initialize keys with.</param>
 		/// <returns>A new key value.</returns>
 		static public byte[] GenerateKeys(byte[] seed)
 		{
@@ -133,7 +133,7 @@ namespace ICSharpCode.SharpZipLib.Encryption
 	internal class PkzipClassicEncryptCryptoTransform : PkzipClassicCryptoBase, ICryptoTransform
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="PkzipClassicEncryptCryptoTransform"></see>
+		/// Initialize a new instance of <see cref="PkzipClassicEncryptCryptoTransform"></see>
 		/// </summary>
 		/// <param name="keyBlock">The key block to use.</param>
 		internal PkzipClassicEncryptCryptoTransform(byte[] keyBlock)
@@ -243,7 +243,7 @@ namespace ICSharpCode.SharpZipLib.Encryption
 	internal class PkzipClassicDecryptCryptoTransform : PkzipClassicCryptoBase, ICryptoTransform
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="PkzipClassicDecryptCryptoTransform"></see>.
+		/// Initialize a new instance of <see cref="PkzipClassicDecryptCryptoTransform"></see>.
 		/// </summary>
 		/// <param name="keyBlock">The key block to decrypt with.</param>
 		internal PkzipClassicDecryptCryptoTransform(byte[] keyBlock)

@@ -61,7 +61,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		}
 
 		/// <summary>
-		/// Initialise a TarArchive for input.
+		/// Initialize a TarArchive for input.
 		/// </summary>
 		/// <param name="stream">The <see cref="TarInputStream"/> to use for input.</param>
 		protected TarArchive(TarInputStream stream)
@@ -75,7 +75,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		}
 
 		/// <summary>
-		/// Initialise a TarArchive for output.
+		/// Initialize a TarArchive for output.
 		/// </summary>
 		/// <param name="stream">The <see cref="TarOutputStream"/> to use for output.</param>
 		protected TarArchive(TarOutputStream stream)

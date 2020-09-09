@@ -8,7 +8,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 	/// The class also holds a number of tar constants, used mostly in headers.
 	/// </summary>
 	/// <remarks>
-	///    The tar format and its POSIX successor PAX have a long history which makes for compatability
+	///    The tar format and its POSIX successor PAX have a long history which makes for compatibility
 	///    issues when creating and reading files.
 	///
 	///    This is further complicated by a large number of programs with variations on formats
@@ -211,7 +211,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		public const byte LF_GNU_MULTIVOL = (byte)'M';
 
 		/// <summary>
-		/// For storing filenames that dont fit in the main header (old GNU)
+		/// For storing filenames that don't fit in the main header (old GNU)
 		/// </summary>
 		public const byte LF_GNU_NAMES = (byte)'N';
 
@@ -243,7 +243,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a default TarHeader instance
+		/// Initialize a default TarHeader instance
 		/// </summary>
 		public TarHeader()
 		{

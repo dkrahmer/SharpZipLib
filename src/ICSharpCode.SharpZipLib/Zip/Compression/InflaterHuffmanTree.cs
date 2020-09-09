@@ -113,7 +113,7 @@ namespace ICSharpCode.SharpZipLib.Zip.Compression
 				}
 			}
 
-			/* -jr comment this out! doesnt work for dynamic trees and pkzip 2.04g
+			/* -jr comment this out! doesn't work for dynamic trees and pkzip 2.04g
 						if (code != 65536)
 						{
 							throw new SharpZipBaseException("Code lengths don't add up properly.");

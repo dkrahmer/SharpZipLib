@@ -128,7 +128,7 @@ namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams
 		/// <param name="offset">offset of start in source dictionary</param>
 		/// <param name="length">length of dictionary</param>
 		/// <exception cref="InvalidOperationException">
-		/// If window isnt empty
+		/// If window isn't empty
 		/// </exception>
 		public void CopyDict(byte[] dictionary, int offset, int length)
 		{

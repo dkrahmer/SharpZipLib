@@ -537,7 +537,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		/// <summary>
 		/// WriteFinalRecord writes the current record buffer to output any unwritten data is present.
 		/// </summary>
-		/// <remarks>Any trailing bytes are set to zero which is by definition correct behaviour
+		/// <remarks>Any trailing bytes are set to zero which is by definition correct behavior
 		/// for the end of a tar stream.</remarks>
 		private void WriteFinalRecord()
 		{

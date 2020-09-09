@@ -65,7 +65,7 @@ namespace ICSharpCode.SharpZipLib.Checksum
 		#endregion Instance Fields
 
 		/// <summary>
-		/// Initialise a default instance of <see cref="Adler32"></see>
+		/// Initialize a default instance of <see cref="Adler32"></see>
 		/// </summary>
 		public Adler32()
 		{

@@ -36,7 +36,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		};
 
 		/// <summary>
-		/// Initialises a new instance of <see cref="WindowsNameTransform"/>
+		/// Initializes a new instance of <see cref="WindowsNameTransform"/>
 		/// </summary>
 		/// <param name="baseDirectory"></param>
 		/// <param name="allowParentTraversal">Allow parent directory traversal in file paths (e.g. ../file)</param>
@@ -47,7 +47,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise a default instance of <see cref="WindowsNameTransform"/>
+		/// Initialize a default instance of <see cref="WindowsNameTransform"/>
 		/// </summary>
 		public WindowsNameTransform()
 		{
@@ -151,7 +151,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// </summary>
 		/// <param name="name">The name to test.</param>
 		/// <returns>Returns true if the name is a valid zip name; false otherwise.</returns>
-		/// <remarks>The filename isnt a true windows path in some fundamental ways like no absolute paths, no rooted paths etc.</remarks>
+		/// <remarks>The filename isn't a true windows path in some fundamental ways like no absolute paths, no rooted paths etc.</remarks>
 		public static bool IsValidName(string name)
 		{
 			bool result =

@@ -274,7 +274,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		}
 
 		/// <summary>
-		/// Initialise an instance of <see cref="StreamUtils"></see>
+		/// Initialize an instance of <see cref="StreamUtils"></see>
 		/// </summary>
 		private StreamUtils()
 		{

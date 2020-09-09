@@ -159,7 +159,7 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 		}
 
 		/// <summary>
-		/// Entries with null names arent allowed
+		/// Entries with null names aren't allowed
 		/// </summary>
 		[Test]
 		[Category("Zip")]

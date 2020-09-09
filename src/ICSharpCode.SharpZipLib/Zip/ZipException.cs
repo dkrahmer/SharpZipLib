@@ -10,14 +10,14 @@ namespace ICSharpCode.SharpZipLib.Zip
 	public class ZipException : SharpZipBaseException
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="ZipException" />.
+		/// Initialize a new instance of <see cref="ZipException" />.
 		/// </summary>
 		public ZipException()
 		{
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ZipException" /> with its message string.
+		/// Initialize a new instance of <see cref="ZipException" /> with its message string.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		public ZipException(string message)
@@ -26,7 +26,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ZipException" />.
+		/// Initialize a new instance of <see cref="ZipException" />.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		/// <param name="innerException">The <see cref="Exception"/> that caused this exception.</param>

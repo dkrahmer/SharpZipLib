@@ -231,7 +231,7 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 				string addFile = Path.Combine(tempFilePath, "test.zip");
 				try
 				{
-					fastZip.CreateZip(addFile, @"z:\doesnt exist", false, null);
+					fastZip.CreateZip(addFile, @"z:\does not exist", false, null);
 				}
 				finally
 				{
@@ -326,7 +326,7 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 					// TODO: samples of this test must be reversible
 					// Some samples can't be restored back with their encoding.
 					// test wasn't failing only because SystemDefaultCodepage is 65001 on Net.Core and
-					// old behaviour actually was using Unicode instead of user's passed codepage
+					// old behavior actually was using Unicode instead of user's passed codepage
 					var encoder = Encoding.GetEncoding(encoding);
 					var bytes = encoder.GetBytes(filename);
 					var restoredString = encoder.GetString(bytes);
@@ -357,7 +357,7 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 			string addFile = Path.Combine(tempFilePath, "test.zip");
 			try
 			{
-				Assert.Throws<FileNotFoundException>(() => fastZip.ExtractZip(addFile, @"z:\doesnt exist", null));
+				Assert.Throws<FileNotFoundException>(() => fastZip.ExtractZip(addFile, @"z:\does not exist", null));
 			}
 			finally
 			{

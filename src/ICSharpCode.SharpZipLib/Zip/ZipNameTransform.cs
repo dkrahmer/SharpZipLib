@@ -9,7 +9,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 	/// ZipNameTransform transforms names as per the Zip file naming convention.
 	/// </summary>
 	/// <remarks>The use of absolute names is supported although its use is not valid
-	/// according to Zip naming conventions, and should not be used if maximum compatability is desired.</remarks>
+	/// according to Zip naming conventions, and should not be used if maximum compatibility is desired.</remarks>
 	public class ZipNameTransform : INameTransform
 	{
 		#region Constructors

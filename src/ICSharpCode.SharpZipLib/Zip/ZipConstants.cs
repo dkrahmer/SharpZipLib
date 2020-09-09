@@ -391,8 +391,8 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// Signature for data descriptor
 		/// </summary>
 		/// <remarks>
-		/// This is only used where the length, Crc, or compressed size isnt known when the
-		/// entry is created and the output stream doesnt support seeking.
+		/// This is only used where the length, Crc, or compressed size isn't known when the
+		/// entry is created and the output stream doesn't support seeking.
 		/// The local entry cannot be 'patched' with the correct values in this case
 		/// so the values are recorded after the data prefixed by this header, as well as in the central directory.
 		/// </remarks>
@@ -402,8 +402,8 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// Signature for data descriptor
 		/// </summary>
 		/// <remarks>
-		/// This is only used where the length, Crc, or compressed size isnt known when the
-		/// entry is created and the output stream doesnt support seeking.
+		/// This is only used where the length, Crc, or compressed size isn't known when the
+		/// entry is created and the output stream doesn't support seeking.
 		/// The local entry cannot be 'patched' with the correct values in this case
 		/// so the values are recorded after the data prefixed by this header, as well as in the central directory.
 		/// </remarks>
@@ -468,9 +468,9 @@ namespace ICSharpCode.SharpZipLib.Zip
 
 		/// <summary>
 		/// Default encoding used for string conversion.  0 gives the default system OEM code page.
-		/// Using the default code page isnt the full solution necessarily
+		/// Using the default code page isn't the full solution necessarily
 		/// there are many variable factors, codepage 850 is often a good choice for
-		/// European users, however be careful about compatability.
+		/// European users, however be careful about compatibility.
 		/// </summary>
 		[Obsolete("Use ZipStrings instead")]
 		public static int DefaultCodePage

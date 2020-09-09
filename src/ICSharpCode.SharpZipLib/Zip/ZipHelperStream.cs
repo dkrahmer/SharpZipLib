@@ -74,7 +74,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		#region Constructors
 
 		/// <summary>
-		/// Initialise an instance of this class.
+		/// Initialize an instance of this class.
 		/// </summary>
 		/// <param name="name">The name of the file to open.</param>
 		public ZipHelperStream(string name)
@@ -84,7 +84,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ZipHelperStream"/>.
+		/// Initialize a new instance of <see cref="ZipHelperStream"/>.
 		/// </summary>
 		/// <param name="stream">The stream to use.</param>
 		public ZipHelperStream(Stream stream)
@@ -314,7 +314,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 
 			long giveUpMarker = Math.Max(pos - maximumVariableData, 0);
 
-			// TODO: This loop could be optimised for speed.
+			// TODO: This loop could be optimized for speed.
 			do
 			{
 				if (pos < giveUpMarker)

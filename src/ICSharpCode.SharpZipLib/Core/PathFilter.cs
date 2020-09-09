@@ -13,7 +13,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="PathFilter"></see>.
+		/// Initialize a new instance of <see cref="PathFilter"></see>.
 		/// </summary>
 		/// <param name="filter">The <see cref="NameFilter">filter</see> expression to apply.</param>
 		public PathFilter(string filter)
@@ -63,7 +63,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of ExtendedPathFilter.
+		/// Initialize a new instance of ExtendedPathFilter.
 		/// </summary>
 		/// <param name="filter">The filter to apply.</param>
 		/// <param name="minSize">The minimum file size to include.</param>
@@ -77,7 +77,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		}
 
 		/// <summary>
-		/// Initialise a new instance of ExtendedPathFilter.
+		/// Initialize a new instance of ExtendedPathFilter.
 		/// </summary>
 		/// <param name="filter">The filter to apply.</param>
 		/// <param name="minDate">The minimum <see cref="DateTime"/> to include.</param>
@@ -91,7 +91,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		}
 
 		/// <summary>
-		/// Initialise a new instance of ExtendedPathFilter.
+		/// Initialize a new instance of ExtendedPathFilter.
 		/// </summary>
 		/// <param name="filter">The filter to apply.</param>
 		/// <param name="minSize">The minimum file size to include.</param>
@@ -118,7 +118,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		/// </summary>
 		/// <param name="name">The filename to test.</param>
 		/// <returns>True if the filter matches, false otherwise.</returns>
-		/// <exception cref="System.IO.FileNotFoundException">The <see paramref="fileName"/> doesnt exist</exception>
+		/// <exception cref="System.IO.FileNotFoundException">The <see paramref="fileName"/> doesn't exist</exception>
 		public override bool IsMatch(string name)
 		{
 			bool result = base.IsMatch(name);
@@ -242,7 +242,7 @@ namespace ICSharpCode.SharpZipLib.Core
 	public class NameAndSizeFilter : PathFilter
 	{
 		/// <summary>
-		/// Initialise a new instance of NameAndSizeFilter.
+		/// Initialize a new instance of NameAndSizeFilter.
 		/// </summary>
 		/// <param name="filter">The filter to apply.</param>
 		/// <param name="minSize">The minimum file size to include.</param>

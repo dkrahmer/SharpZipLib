@@ -138,7 +138,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// Get / set a value indicating how Zip64 Extension usage is determined when adding entries.
 		/// </summary>
 		/// <remarks>Older archivers may not understand Zip64 extensions.
-		/// If backwards compatability is an issue be careful when adding <see cref="ZipEntry.Size">entries</see> to an archive.
+		/// If backwards compatibility is an issue be careful when adding <see cref="ZipEntry.Size">entries</see> to an archive.
 		/// Setting this property to off is workable but less desirable as in those circumstances adding a file
 		/// larger then 4GB will fail.</remarks>
 		public UseZip64 UseZip64
@@ -282,7 +282,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			{
 				headerInfoAvailable = (entry.Size >= 0) && entry.HasCrc && entry.CompressedSize >= 0;
 
-				// Switch to deflation if storing isnt possible.
+				// Switch to deflation if storing isn't possible.
 				if (method == CompressionMethod.Stored)
 				{
 					if (!headerInfoAvailable)
@@ -323,7 +323,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 				entry.IsCrypted = true;
 				if (entry.Crc < 0)
 				{
-					// Need to append a data descriptor as the crc isnt available for use
+					// Need to append a data descriptor as the crc isn't available for use
 					// with encryption, the date is used instead.  Setting the flag
 					// indicates this to the decompressor.
 					entry.Flags |= 8;

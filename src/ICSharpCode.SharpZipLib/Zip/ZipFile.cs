@@ -22,7 +22,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="KeysRequiredEventArgs"></see>
+		/// Initialize a new instance of <see cref="KeysRequiredEventArgs"></see>
 		/// </summary>
 		/// <param name="name">The name of the file for which keys are required.</param>
 		public KeysRequiredEventArgs(string name)
@@ -31,7 +31,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="KeysRequiredEventArgs"></see>
+		/// Initialize a new instance of <see cref="KeysRequiredEventArgs"></see>
 		/// </summary>
 		/// <param name="name">The name of the file for which keys are required.</param>
 		/// <param name="keyValue">The current key value.</param>
@@ -138,7 +138,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="TestStatus"/>
+		/// Initialize a new instance of <see cref="TestStatus"/>
 		/// </summary>
 		/// <param name="file">The <see cref="ZipFile"/> this status applies to.</param>
 		public TestStatus(ZipFile file)
@@ -482,7 +482,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// The stream doesn't contain a valid zip archive.<br/>
 		/// </exception>
 		/// <exception cref="ArgumentException">
-		/// The <see cref="Stream">stream</see> doesnt support seeking.
+		/// The <see cref="Stream">stream</see> doesn't support seeking.
 		/// </exception>
 		/// <exception cref="ArgumentNullException">
 		/// The <see cref="Stream">stream</see> argument is null.
@@ -505,7 +505,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// The stream doesn't contain a valid zip archive.<br/>
 		/// </exception>
 		/// <exception cref="ArgumentException">
-		/// The <see cref="Stream">stream</see> doesnt support seeking.
+		/// The <see cref="Stream">stream</see> doesn't support seeking.
 		/// </exception>
 		/// <exception cref="ArgumentNullException">
 		/// The <see cref="Stream">stream</see> argument is null.
@@ -545,7 +545,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialises a default <see cref="ZipFile"/> instance with no entries and no file storage.
+		/// Initializes a default <see cref="ZipFile"/> instance with no entries and no file storage.
 		/// </summary>
 		internal ZipFile()
 		{
@@ -611,7 +611,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <param name="outStream">The stream providing data storage.</param>
 		/// <returns>Returns the newly created <see cref="ZipFile"/></returns>
 		/// <exception cref="ArgumentNullException"><paramref name="outStream"> is null</paramref></exception>
-		/// <exception cref="ArgumentException"><paramref name="outStream"> doesnt support writing.</paramref></exception>
+		/// <exception cref="ArgumentException"><paramref name="outStream"> doesn't support writing.</paramref></exception>
 		public static ZipFile Create(Stream outStream)
 		{
 			if (outStream == null)
@@ -1157,7 +1157,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 
 				if (testHeader)
 				{
-					if ((extractVersion <= 63) &&   // Ignore later versions as we dont know about them..
+					if ((extractVersion <= 63) &&   // Ignore later versions as we don't know about them..
 						(extractVersion != 10) &&
 						(extractVersion != 11) &&
 						(extractVersion != 20) &&
@@ -1177,7 +1177,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 						throw new ZipException(string.Format("Version required to extract this entry is invalid ({0})", extractVersion));
 					}
 
-					// Local entry flags dont have reserved bit set on.
+					// Local entry flags don't have reserved bit set on.
 					if ((localFlags & (int)(GeneralBitFlags.ReservedPKware4 | GeneralBitFlags.ReservedPkware14 | GeneralBitFlags.ReservedPkware15)) != 0)
 					{
 						throw new ZipException("Reserved bit flags cannot be set.");
@@ -1252,7 +1252,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 					}
 
 					// Crc valid for empty entry.
-					// This will also apply to streamed entries where size isnt known and the header cant be patched
+					// This will also apply to streamed entries where size isn't known and the header cant be patched
 					if ((size == 0) && (compressedSize == 0))
 					{
 						if (crcValue != 0)
@@ -1613,7 +1613,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 				throw new ZipException("Comment length exceeds maximum - 65535");
 			}
 
-			// We dont take account of the original and current comment appearing to be the same
+			// We don't take account of the original and current comment appearing to be the same
 			// as encoding may be different.
 			commentEdited_ = true;
 		}
@@ -2049,7 +2049,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			// TODO: Local offset will require adjusting for multi-disk zip files.
 			entry.Offset = baseStream_.Position;
 
-			// TODO: Need to clear any entry flags that dont make sense or throw an exception here.
+			// TODO: Need to clear any entry flags that don't make sense or throw an exception here.
 			if (update.Command != UpdateCommand.Copy)
 			{
 				if (entry.CompressionMethod == CompressionMethod.Deflated)
@@ -2273,7 +2273,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 					ed.AddLeLong(entry.Offset);
 				}
 
-				// Number of disk on which this file starts isnt supported and is never written here.
+				// Number of disk on which this file starts isn't supported and is never written here.
 				ed.AddNewEntry(1);
 			}
 			else
@@ -2460,7 +2460,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// Get the size of the source descriptor for a <see cref="ZipUpdate"/>.
 		/// </summary>
 		/// <param name="update">The update to get the size for.</param>
-		/// <returns>The descriptor size, zero if there isnt one.</returns>
+		/// <returns>The descriptor size, zero if there isn't one.</returns>
 		private int GetDescriptorSize(ZipUpdate update)
 		{
 			int result = 0;
@@ -2832,7 +2832,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 				if (archiveStorage_.UpdateMode == FileUpdateMode.Direct)
 				{
 					// TODO: archiveStorage wasnt originally intended for this use.
-					// Need to revisit this to tidy up handling as archive storage currently doesnt
+					// Need to revisit this to tidy up handling as archive storage currently doesn't
 					// handle the original stream well.
 					// The problem is when using an existing zip archive with an in memory archive storage.
 					// The open stream wont support writing but the memory storage should open the same file not an in memory one.
@@ -3507,7 +3507,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			// This applies to Zip files that are appended to the end of an SFX stub.
 			// Or are appended as a resource to an executable.
 			// Zip files created by some archivers have the offsets altered to reflect the true offsets
-			// and so dont require any adjustment here...
+			// and so don't require any adjustment here...
 			// TODO: Difficulty with Zip64 and SFX offset handling needs resolution - maths?
 			if (!isZip64 && (offsetOfCentralDir < locatedEndOfCentralDir - (4 + (long)centralDirSize)))
 			{
@@ -3601,7 +3601,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// </exception>
 		/// <exception cref="ICSharpCode.SharpZipLib.Zip.ZipException">
 		/// The local header signature is invalid, the entry and central header file name lengths are different
-		/// or the local and entry compression methods dont match
+		/// or the local and entry compression methods don't match
 		/// </exception>
 		private long LocateEntry(ZipEntry entry)
 		{
@@ -3684,7 +3684,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 				}
 
 				// Closing a CryptoStream will close the base stream as well so wrap it in an UncompressedStream
-				// which doesnt do this.
+				// which doesn't do this.
 				result = new CryptoStream(new UncompressedStream(baseStream),
 					classicManaged.CreateEncryptor(key, null), CryptoStreamMode.Write);
 
@@ -3737,7 +3737,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		// Default is dynamic which is not backwards compatible and can cause problems
 		// with XP's built in compression which cant read Zip64 archives.
 		// However it does avoid the situation were a large file is added and cannot be completed correctly.
-		// Hint: Set always ZipEntry size before they are added to an archive and this setting isnt needed.
+		// Hint: Set always ZipEntry size before they are added to an archive and this setting isn't needed.
 		private UseZip64 useZip64_ = UseZip64.Dynamic;
 
 		#region Zip Update Instance Fields
@@ -3768,7 +3768,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			#region Constructors
 
 			/// <summary>
-			/// Initialise a <see cref="ZipString"/> with a string.
+			/// Initialize a <see cref="ZipString"/> with a string.
 			/// </summary>
 			/// <param name="comment">The textual string form.</param>
 			public ZipString(string comment)
@@ -3778,7 +3778,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 
 			/// <summary>
-			/// Initialise a <see cref="ZipString"/> using a string in its binary 'raw' form.
+			/// Initialize a <see cref="ZipString"/> using a string in its binary 'raw' form.
 			/// </summary>
 			/// <param name="rawString"></param>
 			public ZipString(byte[] rawString)
@@ -4080,7 +4080,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			#region Constructors
 
 			/// <summary>
-			/// Initialise a new instance of the <see cref="PartialInputStream"/> class.
+			/// Initialize a new instance of the <see cref="PartialInputStream"/> class.
 			/// </summary>
 			/// <param name="zipFile">The <see cref="ZipFile"/> containing the underlying stream to use for IO.</param>
 			/// <param name="start">The start of the partial data.</param>
@@ -4384,7 +4384,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 	public class StaticDiskDataSource : IStaticDataSource
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="StaticDiskDataSource"/>
+		/// Initialize a new instance of <see cref="StaticDiskDataSource"/>
 		/// </summary>
 		/// <param name="fileName">The name of the file to obtain data from.</param>
 		public StaticDiskDataSource(string fileName)
@@ -4803,7 +4803,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// Initializes a new instance of the <see cref="MemoryArchiveStorage"/> class.
 		/// </summary>
 		/// <param name="updateMode">The <see cref="FileUpdateMode"/> to use</param>
-		/// <remarks>This constructor is for testing as memory streams dont really require safe mode.</remarks>
+		/// <remarks>This constructor is for testing as memory streams don't really require safe mode.</remarks>
 		public MemoryArchiveStorage(FileUpdateMode updateMode)
 			: base(updateMode)
 		{

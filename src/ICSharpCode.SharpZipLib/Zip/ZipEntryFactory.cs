@@ -62,7 +62,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of the <see cref="ZipEntryFactory"/> class.
+		/// Initialize a new instance of the <see cref="ZipEntryFactory"/> class.
 		/// </summary>
 		/// <remarks>A default <see cref="INameTransform"/>, and the LastWriteTime for files is used.</remarks>
 		public ZipEntryFactory()
@@ -72,7 +72,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ZipEntryFactory"/> using the specified <see cref="TimeSetting"/>
+		/// Initialize a new instance of <see cref="ZipEntryFactory"/> using the specified <see cref="TimeSetting"/>
 		/// </summary>
 		/// <param name="timeSetting">The <see cref="TimeSetting">time setting</see> to use when creating <see cref="ZipEntry">Zip entries</see>.</param>
 		public ZipEntryFactory(TimeSetting timeSetting) : this()
@@ -81,7 +81,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ZipEntryFactory"/> using the specified <see cref="DateTime"/>
+		/// Initialize a new instance of <see cref="ZipEntryFactory"/> using the specified <see cref="DateTime"/>
 		/// </summary>
 		/// <param name="time">The time to set all <see cref="ZipEntry.DateTime"/> values to.</param>
 		public ZipEntryFactory(DateTime time) : this()

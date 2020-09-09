@@ -10,14 +10,14 @@ namespace ICSharpCode.SharpZipLib.BZip2
 	public class BZip2Exception : SharpZipBaseException
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="BZip2Exception" />.
+		/// Initialize a new instance of <see cref="BZip2Exception" />.
 		/// </summary>
 		public BZip2Exception()
 		{
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="BZip2Exception" /> with its message string.
+		/// Initialize a new instance of <see cref="BZip2Exception" /> with its message string.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		public BZip2Exception(string message)
@@ -26,7 +26,7 @@ namespace ICSharpCode.SharpZipLib.BZip2
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="BZip2Exception" />.
+		/// Initialize a new instance of <see cref="BZip2Exception" />.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		/// <param name="innerException">The <see cref="Exception"/> that caused this exception.</param>

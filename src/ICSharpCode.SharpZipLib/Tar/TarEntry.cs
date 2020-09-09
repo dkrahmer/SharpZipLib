@@ -37,7 +37,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a default instance of <see cref="TarEntry"/>.
+		/// Initialize a default instance of <see cref="TarEntry"/>.
 		/// </summary>
 		private TarEntry()
 		{
@@ -457,7 +457,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 
 		/// <summary>
 		/// Get entries for all files present in this entries directory.
-		/// If this entry doesnt represent a directory zero entries are returned.
+		/// If this entry doesn't represent a directory zero entries are returned.
 		/// </summary>
 		/// <returns>
 		/// An array of TarEntry's for this entry's children.

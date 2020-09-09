@@ -8,7 +8,7 @@ namespace ICSharpCode.SharpZipLib.Core
 	/// <summary>
 	/// NameFilter is a string matching class which allows for both positive and negative
 	/// matching.
-	/// A filter is a sequence of independant <see cref="Regex">regular expressions</see> separated by semi-colons ';'.
+	/// A filter is a sequence of independent <see cref="Regex">regular expressions</see> separated by semi-colons ';'.
 	/// To include a semi-colon it may be quoted as in \;. Each expression can be prefixed by a plus '+' sign or
 	/// a minus '-' sign to denote the expression is intended to include or exclude names.
 	/// If neither a plus or minus sign is found include is the default.

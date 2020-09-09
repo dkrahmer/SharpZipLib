@@ -111,7 +111,7 @@ namespace ICSharpCode.SharpZipLib.Checksum
 		#endregion Instance Fields
 
 		/// <summary>
-		/// Initialise a default instance of <see cref="BZip2Crc"></see>
+		/// Initialize a default instance of <see cref="BZip2Crc"></see>
 		/// </summary>
 		public BZip2Crc()
 		{

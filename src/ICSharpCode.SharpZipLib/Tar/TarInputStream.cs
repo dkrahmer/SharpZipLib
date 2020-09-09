@@ -174,7 +174,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		/// This operation is not supported and will throw a NotSupportedException
 		/// </summary>
 		/// <param name="buffer">The buffer containing bytes to write.</param>
-		/// <param name="offset">The offset in the buffer of the frist byte to write.</param>
+		/// <param name="offset">The offset in the buffer of the first byte to write.</param>
 		/// <param name="count">The number of bytes to write.</param>
 		/// <exception cref="NotSupportedException">Any access</exception>
 		public override void Write(byte[] buffer, int offset, int count)
@@ -513,7 +513,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 					}
 					else if (header.TypeFlag == TarHeader.LF_GHDR)
 					{  // POSIX global extended header
-					   // Ignore things we dont understand completely for now
+					   // Ignore things we don't understand completely for now
 						SkipToNextEntry();
 						headerBuf = this.tarBuffer.ReadBlock();
 					}
@@ -557,7 +557,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 							 header.TypeFlag != TarHeader.LF_SYMLINK &&
 							 header.TypeFlag != TarHeader.LF_DIR)
 					{
-						// Ignore things we dont understand completely for now
+						// Ignore things we don't understand completely for now
 						SkipToNextEntry();
 						headerBuf = tarBuffer.ReadBlock();
 					}
@@ -601,6 +601,9 @@ namespace ICSharpCode.SharpZipLib.Tar
 			return GetNextEntry();
 		}
 
+		/// <summary>
+		/// Gets the stream.
+		/// </summary>
 		public Stream GetStream()
 		{
 			return this;
@@ -686,7 +689,8 @@ namespace ICSharpCode.SharpZipLib.Tar
 		/// </summary>
 		public class EntryFactoryAdapter : IEntryFactory
 		{
-			Encoding nameEncoding;
+			private readonly Encoding nameEncoding;
+
 			/// <summary>
 			/// Construct standard entry factory class with ASCII name encoding
 			/// </summary>

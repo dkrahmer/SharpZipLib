@@ -10,14 +10,14 @@ namespace ICSharpCode.SharpZipLib.GZip
 	public class GZipException : SharpZipBaseException
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="GZipException" />.
+		/// Initialize a new instance of <see cref="GZipException" />.
 		/// </summary>
 		public GZipException()
 		{
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="GZipException" /> with its message string.
+		/// Initialize a new instance of <see cref="GZipException" /> with its message string.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		public GZipException(string message)
@@ -26,7 +26,7 @@ namespace ICSharpCode.SharpZipLib.GZip
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="GZipException" />.
+		/// Initialize a new instance of <see cref="GZipException" />.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		/// <param name="innerException">The <see cref="Exception"/> that caused this exception.</param>

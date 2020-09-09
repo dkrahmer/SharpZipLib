@@ -12,7 +12,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ScanEventArgs"/>
+		/// Initialize a new instance of <see cref="ScanEventArgs"/>
 		/// </summary>
 		/// <param name="name">The file or directory name.</param>
 		public ScanEventArgs(string name)
@@ -55,7 +55,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ScanEventArgs"/>
+		/// Initialize a new instance of <see cref="ScanEventArgs"/>
 		/// </summary>
 		/// <param name="name">The file or directory name if known.</param>
 		/// <param name="processed">The number of bytes processed so far</param>
@@ -118,7 +118,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		/// <summary>
 		/// The number of bytes to process.
 		/// </summary>
-		/// <remarks>Target may be 0 or negative if the value isnt known.</remarks>
+		/// <remarks>Target may be 0 or negative if the value isn't known.</remarks>
 		public long Target
 		{
 			get { return target_; }
@@ -179,7 +179,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="ScanFailureEventArgs"></see>
+		/// Initialize a new instance of <see cref="ScanFailureEventArgs"></see>
 		/// </summary>
 		/// <param name="name">The name to apply.</param>
 		/// <param name="e">The exception to use.</param>
@@ -275,7 +275,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="FileSystemScanner"></see>
+		/// Initialize a new instance of <see cref="FileSystemScanner"></see>
 		/// </summary>
 		/// <param name="filter">The <see cref="PathFilter">file filter</see> to apply when scanning.</param>
 		public FileSystemScanner(string filter)
@@ -284,7 +284,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="FileSystemScanner"></see>
+		/// Initialize a new instance of <see cref="FileSystemScanner"></see>
 		/// </summary>
 		/// <param name="fileFilter">The <see cref="PathFilter">file filter</see> to apply.</param>
 		/// <param name="directoryFilter">The <see cref="PathFilter"> directory filter</see> to apply.</param>
@@ -295,7 +295,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="FileSystemScanner"></see>
+		/// Initialize a new instance of <see cref="FileSystemScanner"></see>
 		/// </summary>
 		/// <param name="fileFilter">The file <see cref="IScanFilter">filter</see> to apply.</param>
 		public FileSystemScanner(IScanFilter fileFilter)
@@ -304,7 +304,7 @@ namespace ICSharpCode.SharpZipLib.Core
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="FileSystemScanner"></see>
+		/// Initialize a new instance of <see cref="FileSystemScanner"></see>
 		/// </summary>
 		/// <param name="fileFilter">The file <see cref="IScanFilter">filter</see>  to apply.</param>
 		/// <param name="directoryFilter">The directory <see cref="IScanFilter">filter</see>  to apply.</param>

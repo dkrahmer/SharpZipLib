@@ -113,7 +113,7 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a new instance.
+		/// Initialize a new instance.
 		/// </summary>
 		/// <param name="data">The data to provide.</param>
 		public MemoryDataSource(byte[] data)

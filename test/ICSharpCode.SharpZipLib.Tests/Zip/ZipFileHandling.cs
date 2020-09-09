@@ -715,10 +715,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 		}
 
 		/// <summary>
-		/// Check that ZipFile doesnt find entries when there is more than 64K of data at the end.
+		/// Check that ZipFile doesn't find entries when there is more than 64K of data at the end.
 		/// </summary>
 		/// <remarks>
-		/// This may well be flawed but is the current behaviour.
+		/// This may well be flawed but is the current behavior.
 		/// </remarks>
 		[Test]
 		[Category("Zip")]

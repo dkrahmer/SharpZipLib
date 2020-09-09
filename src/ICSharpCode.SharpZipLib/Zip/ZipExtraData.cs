@@ -37,7 +37,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 	public class RawTaggedData : ITaggedData
 	{
 		/// <summary>
-		/// Initialise a new instance.
+		/// Initialize a new instance.
 		/// </summary>
 		/// <param name="tag">The tag ID.</param>
 		public RawTaggedData(short tag)
@@ -398,7 +398,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <param name="value">The <see cref="DateTime">value</see> to test.</param>
 		/// <returns>Returns true if the value is valid and can be represented; false if not.</returns>
 		/// <remarks>
-		/// NTFS filetimes are 64-bit unsigned integers, stored in Intel
+		/// NTFS file times are 64-bit unsigned integers, stored in Intel
 		/// (least significant byte first) byte order. They determine the
 		/// number of 1.0E-07 seconds (1/10th microseconds!) past WinNT "epoch",
 		/// which is "01-Jan-1601 00:00:00 UTC". 28 May 60056 is the upper limit
@@ -506,7 +506,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		#region Constructors
 
 		/// <summary>
-		/// Initialise a default instance.
+		/// Initialize a default instance.
 		/// </summary>
 		public ZipExtraData()
 		{
@@ -514,7 +514,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Initialise with known extra data.
+		/// Initialize with known extra data.
 		/// </summary>
 		/// <param name="data">The extra data.</param>
 		public ZipExtraData(byte[] data)
@@ -647,7 +647,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			int localLength = _readValueStart;
 			int localTag = headerID - 1;
 
-			// Trailing bytes that cant make up an entry (as there arent enough
+			// Trailing bytes that cant make up an entry (as there aren't enough
 			// bytes for a tag and length) are ignored!
 			while ((localTag != headerID) && (_index < _data.Length - 3))
 			{

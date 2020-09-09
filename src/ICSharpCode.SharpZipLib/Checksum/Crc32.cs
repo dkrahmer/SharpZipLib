@@ -104,7 +104,7 @@ namespace ICSharpCode.SharpZipLib.Checksum
 		}
 
 		/// <summary>
-		/// Initialise a default instance of <see cref="Crc32"></see>
+		/// Initialize a default instance of <see cref="Crc32"></see>
 		/// </summary>
 		public Crc32()
 		{

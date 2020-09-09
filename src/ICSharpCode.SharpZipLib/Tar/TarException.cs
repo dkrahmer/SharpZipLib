@@ -10,14 +10,14 @@ namespace ICSharpCode.SharpZipLib.Tar
 	public class TarException : SharpZipBaseException
 	{
 		/// <summary>
-		/// Initialise a new instance of <see cref="TarException" />.
+		/// Initialize a new instance of <see cref="TarException" />.
 		/// </summary>
 		public TarException()
 		{
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="TarException" /> with its message string.
+		/// Initialize a new instance of <see cref="TarException" /> with its message string.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		public TarException(string message)
@@ -26,7 +26,7 @@ namespace ICSharpCode.SharpZipLib.Tar
 		}
 
 		/// <summary>
-		/// Initialise a new instance of <see cref="TarException" />.
+		/// Initialize a new instance of <see cref="TarException" />.
 		/// </summary>
 		/// <param name="message">A <see cref="string"/> that describes the error.</param>
 		/// <param name="innerException">The <see cref="Exception"/> that caused this exception.</param>

@@ -69,7 +69,7 @@ namespace ICSharpCode.SharpZipLib.Encryption
 				throw new Exception("Invalid blocksize " + blockSize + ". Must be 16 or 32.");
 			if (saltBytes.Length != blockSize / 2)
 				throw new Exception("Invalid salt len. Must be " + blockSize / 2 + " for blocksize " + blockSize);
-			// initialise the encryption buffer and buffer pos
+			// initialize the encryption buffer and buffer pos
 			_blockSize = blockSize;
 			_encryptBuffer = new byte[_blockSize];
 			_encrPos = ENCRYPT_BLOCK;

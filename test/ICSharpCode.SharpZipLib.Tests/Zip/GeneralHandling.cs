@@ -76,7 +76,7 @@ namespace ICSharpCode.SharpZipLib.Tests.Zip
 				{
 					for (int i = 0; i < originalData.Length; ++i)
 					{
-						Assert.AreEqual(decompressedData[i], originalData[i], "Decompressed data doesnt match original, compression level: " + compressionLevel);
+						Assert.AreEqual(decompressedData[i], originalData[i], "Decompressed data doesn't match original, compression level: " + compressionLevel);
 					}
 				}
 			}

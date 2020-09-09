@@ -482,7 +482,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		}
 
 		/// <summary>
-		/// Gets the compatability information for the <see cref="ExternalFileAttributes">external file attribute</see>
+		/// Gets the compatibility information for the <see cref="ExternalFileAttributes">external file attribute</see>
 		/// If the external file attributes are compatible with MS-DOS and can be read
 		/// by PKZIP for DOS version 2.04g then this value will be zero.  Otherwise the value
 		/// will be non-zero and identify the host system on which the attributes are compatible.
@@ -797,7 +797,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// The size or -1 if unknown.
 		/// </returns>
 		/// <remarks>Setting the size before adding an entry to an archive can help
-		/// avoid compatability problems with some archivers which dont understand Zip64 extensions.</remarks>
+		/// avoid compatibility problems with some archivers which don't understand Zip64 extensions.</remarks>
 		public long Size
 		{
 			get
@@ -1051,7 +1051,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 
 			if (extraData.Find(0x0001))
 			{
-				// Version required to extract is ignored here as some archivers dont set it correctly
+				// Version required to extract is ignored here as some archivers don't set it correctly
 				// in theory it should be version 45 or higher
 
 				// The recorded size will change but remember that this is zip64.
@@ -1176,7 +1176,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// </returns>
 		/// <remarks>
 		/// A comment is only available for entries when read via the <see cref="ZipFile"/> class.
-		/// The <see cref="ZipInputStream"/> class doesnt have the comment data available.
+		/// The <see cref="ZipInputStream"/> class doesn't have the comment data available.
 		/// </remarks>
 		public string Comment
 		{
@@ -1192,7 +1192,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 				// is definitely invalid, shorter comments may also have an invalid length
 				// where there are multi-byte characters
 				// The full test is not possible here however as the code page to apply conversions with
-				// isnt available.
+				// isn't available.
 				if ((value != null) && (value.Length > 0xffff))
 				{
 					throw new ArgumentOutOfRangeException(nameof(value), "cannot exceed 65535");

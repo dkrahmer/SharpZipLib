@@ -13,7 +13,7 @@ namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams
 	/// There are some optimizations in this class, for example, you must
 	/// never peek more than 8 bits more than needed, and you must first
 	/// peek bits before you may drop them.  This is not a general purpose
-	/// class but optimized for the behaviour of the Inflater.
+	/// class but optimized for the behavior of the Inflater.
 	///
 	/// authors of the original java version : John Leuner, Jochen Hoenicke
 	/// </summary>
@@ -178,7 +178,7 @@ namespace ICSharpCode.SharpZipLib.Zip.Compression.Streams
 		/// Length is less than zero
 		/// </exception>
 		/// <exception cref="InvalidOperationException">
-		/// Bit buffer isnt byte aligned
+		/// Bit buffer isn't byte aligned
 		/// </exception>
 		public int CopyBytes(byte[] output, int offset, int length)
 		{

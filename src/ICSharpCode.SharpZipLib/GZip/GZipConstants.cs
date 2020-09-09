@@ -48,7 +48,7 @@ namespace ICSharpCode.SharpZipLib.GZip
 		public const int FCOMMENT = 0x10;
 
 		/// <summary>
-		/// Initialise default instance.
+		/// Initialize default instance.
 		/// </summary>
 		/// <remarks>Constructor is private to prevent instances being created.</remarks>
 		private GZipConstants()
