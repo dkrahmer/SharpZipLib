@@ -305,6 +305,12 @@ namespace ICSharpCode.SharpZipLib.Zip
 			return GetNextEntry();
 		}
 
+		/// <summary>
+		/// Gets the stream.
+		/// </summary>
+		/// <returns>
+		/// The stream.
+		/// </returns>
 		public Stream GetStream()
 		{
 			return this;

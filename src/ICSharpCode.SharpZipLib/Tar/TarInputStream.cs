@@ -604,6 +604,9 @@ namespace ICSharpCode.SharpZipLib.Tar
 		/// <summary>
 		/// Gets the stream.
 		/// </summary>
+		/// <returns>
+		/// The stream.
+		/// </returns>
 		public Stream GetStream()
 		{
 			return this;
