@@ -586,6 +586,10 @@ namespace ICSharpCode.SharpZipLib.Zip
 					{
 						result = 20;
 					}
+					else if (CompressionMethod.BZip2 == method)
+					{
+						result = ZipConstants.VersionBZip2;
+					}
 					else if (IsDirectory == true)
 					{
 						result = 20;
@@ -617,6 +621,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 					(Version == 11) ||
 					(Version == 20) ||
 					(Version == 45) ||
+					(Version == 46) ||
 					(Version == 51)) &&
 					IsCompressionMethodSupported();
 			}
@@ -1121,7 +1126,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 		}
 
-		private DateTime? GetDateTime(ZipExtraData extraData)
+		private static DateTime? GetDateTime(ZipExtraData extraData)
 		{
 			// Check for NT timestamp
 			// NOTE: Disable by default to match behavior of InfoZIP
@@ -1291,7 +1296,8 @@ namespace ICSharpCode.SharpZipLib.Zip
 		{
 			return
 				(method == CompressionMethod.Deflated) ||
-				(method == CompressionMethod.Stored);
+				(method == CompressionMethod.Stored) ||
+				(method == CompressionMethod.BZip2);
 		}
 
 		/// <summary>

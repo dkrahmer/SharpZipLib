@@ -1,17 +1,12 @@
+using System.IO;
+
 namespace ICSharpCode.SharpZipLib.Core
 {
 	/// <summary>
-	/// WindowsPathUtils provides simple utilities for handling windows paths.
+	/// PathUtils provides simple utilities for handling paths.
 	/// </summary>
-	public abstract class WindowsPathUtils
+	public static class PathUtils
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="WindowsPathUtils"/> class.
-		/// </summary>
-		internal WindowsPathUtils()
-		{
-		}
-
 		/// <summary>
 		/// Remove any path root present in the path
 		/// </summary>
@@ -62,6 +57,26 @@ namespace ICSharpCode.SharpZipLib.Core
 				}
 			}
 			return result;
+		}
+
+		/// <summary>
+		/// Returns a random file name in the users temporary directory, or in directory of <paramref name="original"/> if specified
+		/// </summary>
+		/// <param name="original">If specified, used as the base file name for the temporary file</param>
+		/// <returns>Returns a temporary file name</returns>
+		public static string GetTempFileName(string original)
+		{
+			string fileName;
+			var tempPath = Path.GetTempPath();
+
+			do
+			{
+				fileName = original == null
+					? Path.Combine(tempPath, Path.GetRandomFileName())
+					: $"{original}.{Path.GetRandomFileName()}";
+			} while (File.Exists(fileName));
+
+			return fileName;
 		}
 	}
 }

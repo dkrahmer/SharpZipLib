@@ -5,6 +5,7 @@ using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace ICSharpCode.SharpZipLib.Zip
 {
@@ -262,6 +263,12 @@ namespace ICSharpCode.SharpZipLib.Zip
 				throw new NotImplementedException("Compression method not supported");
 			}
 
+			// A password must have been set in order to add AES encrypted entries
+			if (entry.AESKeySize > 0 && string.IsNullOrEmpty(this.Password))
+			{
+				throw new InvalidOperationException("The Password property must be set before AES encrypted entries can be added");
+			}
+
 			int compressionLevel = defaultCompressionLevel;
 
 			// Clear flags that the library manages internally
@@ -493,6 +500,9 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <summary>
 		/// Closes the current entry, updating header and footer information as required
 		/// </summary>
+		/// <exception cref="ZipException">
+		/// Invalid entry field values.
+		/// </exception>
 		/// <exception cref="System.IO.IOException">
 		/// An I/O error occurs.
 		/// </exception>
@@ -523,7 +533,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 			else if (curMethod == CompressionMethod.Stored)
 			{
-				// This is done by Finsh() for Deflated entries, but we need to do it
+				// This is done by Finish() for Deflated entries, but we need to do it
 				// ourselves for Stored ones
 				base.GetAuthCodeIfAES();
 			}
@@ -532,6 +542,19 @@ namespace ICSharpCode.SharpZipLib.Zip
 			if (curEntry.AESKeySize > 0)
 			{
 				baseOutputStream_.Write(AESAuthCode, 0, 10);
+				// Always use 0 as CRC for AE-2 format
+				curEntry.Crc = 0;
+			}
+			else
+			{
+				if (curEntry.Crc < 0)
+				{
+					curEntry.Crc = crc.Value;
+				}
+				else if (curEntry.Crc != crc.Value)
+				{
+					throw new ZipException($"crc was {crc.Value}, but {curEntry.Crc} was expected");
+				}
 			}
 
 			if (curEntry.Size < 0)
@@ -540,7 +563,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 			else if (curEntry.Size != size)
 			{
-				throw new ZipException("size was " + size + ", but I expected " + curEntry.Size);
+				throw new ZipException($"size was {size}, but {curEntry.Size} was expected");
 			}
 
 			if (curEntry.CompressedSize < 0)
@@ -549,16 +572,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 			else if (curEntry.CompressedSize != csize)
 			{
-				throw new ZipException("compressed size was " + csize + ", but I expected " + curEntry.CompressedSize);
-			}
-
-			if (curEntry.Crc < 0)
-			{
-				curEntry.Crc = crc.Value;
-			}
-			else if (curEntry.Crc != crc.Value)
-			{
-				throw new ZipException("crc was " + crc.Value + ", but I expected " + curEntry.Crc);
+				throw new ZipException($"compressed size was {csize}, but {curEntry.CompressedSize} expected");
 			}
 
 			offset += csize;
@@ -627,8 +641,11 @@ namespace ICSharpCode.SharpZipLib.Zip
 			InitializePassword(Password);
 
 			byte[] cryptBuffer = new byte[ZipConstants.CryptoHeaderSize];
-			var rnd = new Random();
-			rnd.NextBytes(cryptBuffer);
+			using (var rng = new RNGCryptoServiceProvider())
+			{
+				rng.GetBytes(cryptBuffer);
+			}
+
 			cryptBuffer[11] = (byte)(crcValue >> 24);
 
 			EncryptBlock(cryptBuffer, 0, cryptBuffer.Length);
@@ -708,7 +725,12 @@ namespace ICSharpCode.SharpZipLib.Zip
 				throw new ArgumentException("Invalid offset/count combination");
 			}
 
-			crc.Update(new ArraySegment<byte>(buffer, offset, count));
+			if (curEntry.AESKeySize == 0)
+			{
+				// Only update CRC if AES is not enabled
+				crc.Update(new ArraySegment<byte>(buffer, offset, count));
+			}
+
 			size += count;
 
 			switch (curMethod)
