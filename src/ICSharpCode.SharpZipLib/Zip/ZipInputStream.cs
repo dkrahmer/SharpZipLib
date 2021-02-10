@@ -143,7 +143,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// Uses entry.CompressionMethodForHeader so that entries of type WinZipAES will be rejected. 
 		/// </remarks>
 		/// <param name="entry">the entry to check.</param>
-		/// <returns>true if the compression methiod is supported, false if not.</returns>
+		/// <returns>true if the compression method is supported, false if not.</returns>
 		private static bool IsEntryCompressionMethodSupported(ZipEntry entry)
 		{
 			var entryCompressionMethod = entry.CompressionMethodForHeader;
@@ -294,7 +294,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 			}
 			else
 			{
-				internalReader = new ReadDataHandler(ReadingNotSupported);
+				internalReader = new ReadDataHandler((destination, offset, count) => ReadingNotSupported(destination, offset, count, entry.CompressionMethod));
 			}
 
 			return entry;
@@ -505,9 +505,10 @@ namespace ICSharpCode.SharpZipLib.Zip
 		/// <summary>
 		/// Handle attempts to read from this entry by throwing an exception
 		/// </summary>
-		private int ReadingNotSupported(byte[] destination, int offset, int count)
+		private int ReadingNotSupported(byte[] destination, int offset, int count, CompressionMethod? compressionMethod = null)
 		{
-			throw new ZipException("The compression method for this entry is not supported");
+			string compressionMethodStr = compressionMethod.HasValue ? $" ({compressionMethod.ToString()})" : "";
+			throw new ZipException($"The compression method for this entry is not supported{compressionMethodStr}");
 		}
 
 		/// <summary>
